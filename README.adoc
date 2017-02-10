@@ -1,0 +1,55 @@
+= Asciidoctor Plantuml Extension
+Horacio Sanson <https://github.com/hsanson/asciidoctor-legal>
+:description: README for the Asciidoctor Legal extension.
+
+Asciidoctor Legal is an simple extension that adds features useful for
+writing legal documents in Asciidoctor.
+
+WARNING: This is in very early development stages and currently has
+one feature: numbered paragraphs.
+
+== Installation
+
+Asciidoctor Legal is a RubyGem and can be installed via `gem` or `bundle`
+commands:
+
+    $ gem install asciidoctor-legal
+
+== Paragraph Numbering
+
+Legal documents require paragraph numbering and cross linking. This
+functionality seems to be supported with the docbook backend of
+Asciidoctor but not with the html5 backend.
+
+This extension provides an InlineMacro that allows numbering of
+paragraph in documents. To use it simply add the inlime macro to the
+paragraphs you want numbered:
+
+----
+legal:p1[] This is a numbered paragraph.
+
+legal:p2[] This is another numbered paragraph.
+
+This is a non numbered paragraph.
+
+This is an xref link to the numbered paragraph <<p1>>.
+----
+
+The resulting HTML5 rendering will look like:
+
+----
+*[0001]* This is a numbered paragraph.
+
+*[0002]* This is another numbered paragraph.
+
+This is a non numbered paragraph.
+
+This is an xref link to the numbered paragraph [0001].
+----
+
+The first paragraph contains the `legal` inline macro with `p1` as
+target. This target can be used anywhere in the document to create
+cross links with `<<p1>>`. Any valid attribute name can be used as
+target.
+
+

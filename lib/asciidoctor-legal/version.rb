@@ -1,0 +1,5 @@
+module Asciidoctor
+  module Legal
+    VERSION = "0.0.1"
+  end
+end
