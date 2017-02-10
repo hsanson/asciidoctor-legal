@@ -1,4 +1,4 @@
-= Asciidoctor Plantuml Extension
+= Asciidoctor Legal Extension
 Horacio Sanson <https://github.com/hsanson/asciidoctor-legal>
 :description: README for the Asciidoctor Legal extension.
 
